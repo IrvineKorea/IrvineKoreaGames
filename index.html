@@ -2,24 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>IrvineKoreaGames</title>
+  <title>Change Content Example</title>
 </head>
 <body>
-  <h1>IrvineKoreaGames</h1>
+  <h1>Check Input Example</h1>
 
-  <label for="codeInput">Code:</label>
-  <input id="codeInput" type="text" placeholder="Enter code" />
+  <form id="codeForm">
+    <label for="codeInput">Enter code:</label>
+    <input id="codeInput" type="text" placeholder="Type something" />
+    <button type="submit">Submit</button>
+  </form>
 
-  <br/><br/>
-  <button id="submitBtn">Submit</button>
+  <!-- 메시지는 항상 보이지만 기본값은 안내 문구 -->
+  <p id="message" style="color:gray; font-weight:bold;">
+    Please enter the code above and press submit.
+  </p>
 
   <script>
-    document.getElementById('submitBtn').addEventListener
-    ('click', () =>
-    {
-      const pw = document.getElementById('codeInput').value;
-    }
-    );
+    document.getElementById('codeForm').addEventListener('submit', (e) => {
+      e.preventDefault(); // 폼 제출로 인한 새로고침 방지
+      const inputValue = document.getElementById('codeInput').value.trim();
+
+      const messageEl = document.getElementById('message');
+
+      if (inputValue === "opensesame") {
+        // 맞으면 성공 메시지로 교체
+        messageEl.innerText = "Correct! Welcome to the secret area.";
+        messageEl.style.color = "green";
+      } else {
+        // 틀리면 오류 메시지로 교체
+        messageEl.innerText = " Wrong code. Try again!";
+        messageEl.style.color = "red";
+      }
+    });
   </script>
 </body>
 </html>
