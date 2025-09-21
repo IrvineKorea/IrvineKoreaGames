@@ -6,35 +6,12 @@
 </head>
 <body>
   <h1>IrvineKoreaGames</h1>
-
-  <form id="codeForm">
-    <label for="codeInput">Enter code:</label>
-    <input id="codeInput" type="text" placeholder="enter code" />
-    <button type="submit">Submit</button>
-  </form>
-
-  <!-- 메시지는 항상 보이지만 기본값은 안내 문구 -->
-  <p id="message" style="color:gray; font-weight:bold;">
-    Please enter the code above and press submit.
+  <br/><br/>
+  <p>
+    Check downloads down below <br/>
+    아래에서 다운로드를 확인하세요 <br/>
+    Überprüfen Sie unten die Herunterladungen <br/>
+    <a href="https://github.com/IrvineKorea/IrvineKoreaGames/releases">Releases</a>
   </p>
-
-  <script>
-    document.getElementById('codeForm').addEventListener('submit', (e) => {
-      e.preventDefault(); // 폼 제출로 인한 새로고침 방지
-      const inputValue = document.getElementById('codeInput').value.trim();
-
-      const messageEl = document.getElementById('message');
-
-      if (inputValue === "IrvinePokatelloFargo") {
-        // 맞으면 성공 메시지로 교체
-        messageEl.innerText = "Correct! Welcome to the secret area.";
-        messageEl.style.color = "green";
-      } else {
-        // 틀리면 오류 메시지로 교체
-        messageEl.innerText = " Wrong code. Try again";
-        messageEl.style.color = "red";
-      }
-    });
-  </script>
 </body>
 </html>
