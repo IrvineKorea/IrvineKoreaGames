@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>github page</title>
+  <meta charset="utf-8" />
+  <title>Input Example</title>
 </head>
 <body>
-  <h1>github page</h1>
+  <h1>Input Example</h1>
+
+  <!-- Accessible label with for/id -->
+  <label for="nameInput">Name:</label>
+  <input id="nameInput" type="text" placeholder="Enter your name" />
+
+  <br/><br/>
+
+  <label for="pwInput">Password:</label>
+  <input id="pwInput" type="password" placeholder="Enter password" />
+
+  <br/><br/>
+  <button id="submitBtn">Submit</button>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      const name = document.getElementById('nameInput').value;
+      const pw = document.getElementById('pwInput').value;
+      // WARNING: Do NOT log or alert real passwords in production.
+      alert(`Name entered: ${name}\nPassword entered: ${pw}`);
+    });
+  </script>
 </body>
 </html>
